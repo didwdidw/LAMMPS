@@ -1,0 +1,97 @@
+LAMMPS (29 Oct 2020)
+  using 1 OpenMP thread(s) per MPI task
+Lattice spacing in x,y,z = 1.6795962 1.6795962 1.6795962
+Created orthogonal box = (0.0000000 0.0000000 0.0000000) to (335.91924 335.91924 167.95962)
+  8 by 8 by 5 MPI processor grid
+Created 16000000 atoms
+  create_atoms CPU = 0.281 seconds
+----------------------------------------------------------
+Using Intel Package without Coprocessor.
+Precision: double
+----------------------------------------------------------
+Neighbor list info ...
+  update every 20 steps, delay 0 steps, check no
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 2.8
+  ghost atom cutoff = 2.8
+  binsize = 1.4, bins = 240 240 120
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair lj/cut/intel, perpetual
+      attributes: full, newton off, intel
+      pair build: full/bin/intel
+      stencil: full/bin/3d
+      bin: intel
+Setting up Verlet run ...
+  Unit style    : lj
+  Current step  : 0
+  Time step     : 0.005
+Per MPI rank memory allocation (min/avg/max) = 425.6 | 436.2 | 446.7 Mbytes
+Step Temp E_pair E_mol TotEng Press 
+       0         1.44   -6.7733681            0   -4.6133682   -5.0196693 
+   10000   0.69740584   -5.6672924            0   -4.6211837    0.7462649 
+Loop time of 354.798 on 320 procs for 10000 steps with 16000000 atoms
+
+Performance: 12175.927 tau/day, 28.185 timesteps/s
+99.6% CPU use with 320 MPI tasks x 1 OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 182.24     | 190.45     | 204.46     |  28.4 | 53.68
+Neigh   | 30.017     | 30.737     | 31.795     |   6.5 |  8.66
+Comm    | 84.16      | 106.82     | 121.96     |  69.9 | 30.11
+Output  | 0.050265   | 0.092641   | 0.12912    |   1.9 |  0.03
+Modify  | 16.415     | 23.025     | 29.643     |  67.4 |  6.49
+Other   |            | 3.674      |            |       |  1.04
+
+Nlocal:        50000.0 ave       50136 max       49862 min
+Histogram: 3 7 26 46 79 76 49 16 12 6
+Nghost:        24932.0 ave       25096 max       24820 min
+Histogram: 8 23 47 69 87 56 20 6 3 1
+Neighs:        0.00000 ave           0 max           0 min
+Histogram: 320 0 0 0 0 0 0 0 0 0
+FullNghs:  3.75046e+06 ave 3.76727e+06 max 3.73423e+06 min
+Histogram: 4 14 32 42 71 73 41 23 13 7
+
+Total # of neighbors = 1.2001467e+09
+Ave neighs/atom = 75.009168
+Neighbor list builds = 500
+Dangerous builds not checked
+Total wall time: 0:05:56
+
+scontrol show jobid 5435221
+JobId=5435221 JobName=mpi_job
+   UserId=lcl_uotiscsccs1040(1911040) GroupId=lcl_uotiscscc(1910004) MCS_label=N/A
+   Priority=1712345 Nice=0 Account=lcl-uotiscsccs1040 QOS=normal
+   JobState=COMPLETING Reason=None Dependency=(null)
+   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:06:07 TimeLimit=01:00:00 TimeMin=N/A
+   SubmitTime=2021-06-01T17:25:19 EligibleTime=2021-06-01T17:25:19
+   AccrueTime=2021-06-01T17:25:19
+   StartTime=2021-06-01T17:25:51 EndTime=2021-06-01T17:31:58 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2021-06-01T17:25:51
+   Partition=compute AllocNode:Sid=nia-login03:438727
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=nia[0249,0906,1161-1162]
+   BatchHost=nia0249
+   NumNodes=4 NumCPUs=320 NumTasks=320 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=320,mem=700000M,node=4,billing=160
+   Socks/Node=* NtasksPerN:B:S:C=80:0:*:* CoreSpec=*
+   MinCPUsNode=80 MinMemoryNode=175000M MinTmpDiskNode=0
+   Features=[skylake|cascade] DelayBoot=00:00:00
+   OverSubscribe=NO Contiguous=0 Licenses=(null) Network=(null)
+   Command=/gpfs/fs0/scratch/l/lcl_uotiscscc/lcl_uotiscsccs1040/didwdidw/1_experiments/jobscript.sh
+   WorkDir=/gpfs/fs0/scratch/l/lcl_uotiscscc/lcl_uotiscsccs1040/didwdidw/1_experiments
+   StdErr=/gpfs/fs0/scratch/l/lcl_uotiscscc/lcl_uotiscsccs1040/didwdidw/1_experiments/BEST_1.txt
+   StdIn=/dev/null
+   StdOut=/gpfs/fs0/scratch/l/lcl_uotiscscc/lcl_uotiscsccs1040/didwdidw/1_experiments/BEST_1.txt
+   Power=
+   MailUser=didwdidw0309@gmail.com MailType=END,FAIL
+
+sacct -j 5435221
+       JobID    JobName    Account    Elapsed  MaxVMSize     MaxRSS  SystemCPU    UserCPU ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- ---------- ---------- -------- 
+5435221         mpi_job lcl-uotis+   00:06:07                        20:06.352 1-07:31:51      0:0 
+5435221.bat+      batch lcl-uotis+   00:06:07    684716K      8608K  00:00.270  00:00.300      0:0 
+5435221.ext+     extern lcl-uotis+   00:06:07    138360K      1068K  00:00.001  00:00.001      0:0 
+5435221.0    lmp_intel+ lcl-uotis+   00:06:03  10603000K    129036K  20:06.080 1-07:31:50      0:0 

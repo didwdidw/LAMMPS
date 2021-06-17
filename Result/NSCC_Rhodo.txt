@@ -1,0 +1,142 @@
+LAMMPS (29 Oct 2020)
+KOKKOS mode is enabled (../kokkos.cpp:90)
+  will use up to 4 GPU(s) per node
+WARNING: Turning off CUDA-aware MPI since it is not detected, use '-pk kokkos cuda/aware on' to override (../kokkos.cpp:254)
+Reading data file ...
+  orthogonal box = (-27.500000 -38.500000 -36.364600) to (27.500000 38.500000 36.361500)
+  2 by 2 by 2 MPI processor grid
+  reading atoms ...
+  32000 atoms
+  reading velocities ...
+  32000 velocities
+  scanning bonds ...
+  4 = max bonds/atom
+  scanning angles ...
+  18 = max angles/atom
+  scanning dihedrals ...
+  40 = max dihedrals/atom
+  scanning impropers ...
+  4 = max impropers/atom
+  reading bonds ...
+  27723 bonds
+  reading angles ...
+  40467 angles
+  reading dihedrals ...
+  56829 dihedrals
+  reading impropers ...
+  1034 impropers
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:    0.0      0.0      0.0     
+  special bond factors coul:  0.0      0.0      0.0     
+     4 = max # of 1-2 neighbors
+    12 = max # of 1-3 neighbors
+    24 = max # of 1-4 neighbors
+    26 = max # of special neighbors
+  special bonds CPU = 0.008 seconds
+  read_data CPU = 1.466 seconds
+Replicating atoms ...
+  orthogonal box = (-27.500000 -38.500000 -36.364600) to (192.50000 269.50000 254.53980)
+  2 by 2 by 2 MPI processor grid
+  2048000 atoms
+  1774272 bonds
+  2589888 angles
+  3637056 dihedrals
+  66176 impropers
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:    0.0      0.0      0.0     
+  special bond factors coul:  0.0      0.0      0.0     
+     4 = max # of 1-2 neighbors
+    12 = max # of 1-3 neighbors
+    24 = max # of 1-4 neighbors
+    26 = max # of special neighbors
+  special bonds CPU = 0.208 seconds
+  replicate CPU = 0.916 seconds
+Finding SHAKE clusters ...
+  103488 = # of size 2 clusters
+  232512 = # of size 3 clusters
+   47808 = # of size 4 clusters
+  270912 = # of frozen angles
+  find clusters CPU = 0.123 seconds
+PPPM initialization ...
+  using 12-bit tables for long-range coulomb (../kspace.cpp:328)
+  G vector (1/distance) = 0.24521748
+  grid = 96 125 120
+  stencil order = 5
+  estimated absolute RMS force accuracy = 0.042505564
+  estimated relative force accuracy = 0.00012800424
+  using double precision cuFFT
+  3d grid and FFT values/proc = 234260 181440
+Neighbor list info ...
+  update every 1 steps, delay 5 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 12
+  ghost atom cutoff = 12
+  binsize = 12, bins = 19 26 25
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair lj/charmm/coul/long/kk, perpetual
+      attributes: half, newton off, kokkos_device
+      pair build: half/bin/kk/device
+      stencil: half/bin/3d/newtoff
+      bin: kk/device
+Setting up Verlet run ...
+  Unit style    : real
+  Current step  : 0
+  Time step     : 2
+WARNING: Fixes cannot yet send data in Kokkos communication, switching to classic communication (../comm_kokkos.cpp:496)
+Per MPI rank memory allocation (min/avg/max) = 735.6 | 735.7 | 735.7 Mbytes
+---------------- Step        0 ----- CPU =      0.0000 (sec) ----------------
+TotEng   =  -1622758.4644 KinEng   =   1372469.2022 Temp     =       299.0274 
+PotEng   =  -2995227.6666 E_bond   =    162431.6167 E_angle  =    698967.9493 
+E_dihed  =    333554.3360 E_impro  =     13664.7415 E_vdwl   =   -147703.2586 
+E_coul   =  12998899.2230 E_long   = -17055042.2745 Press    =      -148.6868 
+---------------- Step     6000 ----- CPU =   1343.2363 (sec) ----------------
+TotEng   =  -1620233.5988 KinEng   =   1376017.2339 Temp     =       299.8005 
+PotEng   =  -2996250.8326 E_bond   =    165666.9558 E_angle  =    709490.9710 
+E_dihed  =    337127.7307 E_impro  =     14346.8370 E_vdwl   =   -132943.1314 
+E_coul   =  12965249.8069 E_long   = -17055190.0027 Press    =       -15.7405 
+Loop time of 1343.24 on 8 procs for 6000 steps with 2048000 atoms
+
+Performance: 0.772 ns/day, 31.093 hours/ns, 4.467 timesteps/s
+85.4% CPU use with 8 MPI tasks x 1 OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 25.859     | 26.43      | 27.195     |   7.0 |  1.97
+Bond    | 161.76     | 163.13     | 164.05     |   6.0 | 12.14
+Kspace  | 454.35     | 455.11     | 456.67     |   3.4 | 33.88
+Neigh   | 270.74     | 270.81     | 270.88     |   0.3 | 20.16
+Comm    | 58.116     | 58.517     | 58.94      |   3.6 |  4.36
+Output  | 0.00038303 | 0.00067142 | 0.0011503  |   0.0 |  0.00
+Modify  | 366.05     | 366.92     | 367.46     |   2.0 | 27.32
+Other   |            | 2.323      |            |       |  0.17
+
+Nlocal:       256000.0 ave      256324 max      255733 min
+Histogram: 2 0 1 0 1 2 0 1 0 1
+Nghost:       163481.0 ave      163825 max      163058 min
+Histogram: 2 0 0 0 1 2 0 0 1 2
+Neighs:    1.05637e+08 ave 1.05843e+08 max 1.05434e+08 min
+Histogram: 1 1 0 1 1 0 2 1 0 1
+
+Total # of neighbors = 8.4509676e+08
+Ave neighs/atom = 412.64490
+Ave special neighs/atom = 7.4318750
+Neighbor list builds = 789
+Dangerous builds = 0
+Total wall time: 0:22:55
+======================================================================================
+
+			Resource Usage on 2021-06-17 07:05:33.192222:
+
+	JobId: 4903239.wlm01  
+	Project: 50000007 
+	Exit Status: 0
+	NCPUs Requested: 20				NCPUs Used: 20
+							CPU Time Used: 03:03:09
+	Memory Requested: None 				Memory Used: 16596004kb
+							Vmem Used: 191537884kb
+	Walltime requested: 01:30:00 			Walltime Used: 00:22:57
+	
+	Execution Nodes Used: (dgx4104:ncpus=20:ngpus=4)
+	
+ ======================================================================================

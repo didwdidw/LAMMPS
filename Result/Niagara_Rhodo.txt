@@ -1,0 +1,164 @@
+LAMMPS (29 Oct 2020)
+  using 1 OpenMP thread(s) per MPI task
+Reading data file ...
+  orthogonal box = (-27.500000 -38.500000 -36.364600) to (27.500000 38.500000 36.361500)
+  5 by 8 by 8 MPI processor grid
+  reading atoms ...
+  32000 atoms
+  reading velocities ...
+  32000 velocities
+  scanning bonds ...
+  4 = max bonds/atom
+  scanning angles ...
+  8 = max angles/atom
+  scanning dihedrals ...
+  18 = max dihedrals/atom
+  scanning impropers ...
+  2 = max impropers/atom
+  reading bonds ...
+  27723 bonds
+  reading angles ...
+  40467 angles
+  reading dihedrals ...
+  56829 dihedrals
+  reading impropers ...
+  1034 impropers
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:    0.0      0.0      0.0     
+  special bond factors coul:  0.0      0.0      0.0     
+     4 = max # of 1-2 neighbors
+    12 = max # of 1-3 neighbors
+    24 = max # of 1-4 neighbors
+    26 = max # of special neighbors
+  special bonds CPU = 5.602 seconds
+  read_data CPU = 6.416 seconds
+Replicating atoms ...
+  orthogonal box = (-27.500000 -38.500000 -36.364600) to (192.50000 269.50000 254.53980)
+  5 by 8 by 8 MPI processor grid
+  2048000 atoms
+  1774272 bonds
+  2589888 angles
+  3637056 dihedrals
+  66176 impropers
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:    0.0      0.0      0.0     
+  special bond factors coul:  0.0      0.0      0.0     
+     4 = max # of 1-2 neighbors
+    12 = max # of 1-3 neighbors
+    24 = max # of 1-4 neighbors
+    26 = max # of special neighbors
+  special bonds CPU = 3.118 seconds
+  replicate CPU = 3.570 seconds
+Finding SHAKE clusters ...
+  103488 = # of size 2 clusters
+  232512 = # of size 3 clusters
+   47808 = # of size 4 clusters
+  270912 = # of frozen angles
+  find clusters CPU = 0.433 seconds
+PPPM initialization ...
+  using 12-bit tables for long-range coulomb (../kspace.cpp:328)
+  G vector (1/distance) = 0.25045586
+  grid = 90 120 120
+  stencil order = 7
+  estimated absolute RMS force accuracy = 0.032785255
+  estimated relative force accuracy = 9.8731821e-05
+  using double precision MKL FFT
+  3d grid and FFT values/proc = 12100 4320
+----------------------------------------------------------
+Using Intel Package without Coprocessor.
+Precision: double
+----------------------------------------------------------
+Neighbor list info ...
+  update every 1 steps, delay 5 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 12
+  ghost atom cutoff = 12
+  binsize = 6, bins = 37 52 49
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair lj/charmm/coul/long/intel, perpetual
+      attributes: half, newton on, intel
+      pair build: half/bin/newton/intel
+      stencil: half/bin/3d/newton
+      bin: intel
+Setting up Verlet run ...
+  Unit style    : real
+  Current step  : 0
+  Time step     : 2.0
+Per MPI rank memory allocation (min/avg/max) = 93.20 | 93.82 | 94.95 Mbytes
+---------------- Step        0 ----- CPU =      0.0000 (sec) ----------------
+TotEng   =  -1622906.8352 KinEng   =   1372469.2022 Temp     =       299.0274 
+PotEng   =  -2995376.0374 E_bond   =    162431.6167 E_angle  =    698967.9493 
+E_dihed  =    333554.3360 E_impro  =     13664.7415 E_vdwl   =   -147703.2586 
+E_coul   =  13362009.9434 E_long   = -17418301.3657 Press    =      -148.3947 
+---------------- Step     6000 ----- CPU =    471.6397 (sec) ----------------
+TotEng   =  -1617553.8594 KinEng   =   1377830.1825 Temp     =       300.1955 
+PotEng   =  -2995384.0419 E_bond   =    165820.8152 E_angle  =    709423.9796 
+E_dihed  =    336797.3237 E_impro  =     14393.2221 E_vdwl   =   -132510.6961 
+E_coul   =  13329109.0739 E_long   = -17418417.7602 Press    =        10.0221 
+Loop time of 471.653 on 320 procs for 6000 steps with 2048000 atoms
+
+Performance: 2.198 ns/day, 10.918 hours/ns, 12.721 timesteps/s
+99.1% CPU use with 320 MPI tasks x 1 OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 219.63     | 225.05     | 233.07     |  19.2 | 47.71
+Bond    | 8.1429     | 8.9409     | 9.9563     |  13.9 |  1.90
+Kspace  | 123.66     | 131.29     | 136.95     |  23.9 | 27.84
+Neigh   | 34.518     | 36.198     | 37.124     |   8.1 |  7.67
+Comm    | 28.015     | 30.612     | 35.803     |  23.3 |  6.49
+Output  | 0.00033713 | 0.00079561 | 0.013108   |   0.0 |  0.00
+Modify  | 33.62      | 36.151     | 37.564     |   9.9 |  7.66
+Other   |            | 3.413      |            |       |  0.72
+
+Nlocal:        6400.00 ave        6548 max        6273 min
+Histogram: 7 19 42 60 58 52 46 25 4 7
+Nghost:        20072.7 ave       20319 max       19892 min
+Histogram: 7 26 41 80 61 59 25 16 2 3
+Neighs:    2.40660e+06 ave 2.50146e+06 max 2.33306e+06 min
+Histogram: 12 21 53 68 50 45 37 24 4 6
+
+Total # of neighbors = 7.7011325e+08
+Ave neighs/atom = 376.03186
+Ave special neighs/atom = 7.4318750
+Neighbor list builds = 785
+Dangerous builds = 0
+Total wall time: 0:08:05
+
+scontrol show jobid 5435869
+JobId=5435869 JobName=mpi_job
+   UserId=lcl_uotiscsccs1040(1911040) GroupId=lcl_uotiscscc(1910004) MCS_label=N/A
+   Priority=1712318 Nice=0 Account=lcl-uotiscsccs1040 QOS=normal
+   JobState=COMPLETING Reason=None Dependency=(null)
+   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:08:20 TimeLimit=01:00:00 TimeMin=N/A
+   SubmitTime=2021-06-01T18:30:49 EligibleTime=2021-06-01T18:30:49
+   AccrueTime=2021-06-01T18:30:49
+   StartTime=2021-06-01T18:31:18 EndTime=2021-06-01T18:39:38 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2021-06-01T18:31:18
+   Partition=compute AllocNode:Sid=nia-login03:438727
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=nia[0279,0494,0905-0906]
+   BatchHost=nia0279
+   NumNodes=4 NumCPUs=320 NumTasks=320 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=320,mem=700000M,node=4,billing=160
+   Socks/Node=* NtasksPerN:B:S:C=80:0:*:* CoreSpec=*
+   MinCPUsNode=80 MinMemoryNode=175000M MinTmpDiskNode=0
+   Features=[skylake|cascade] DelayBoot=00:00:00
+   OverSubscribe=NO Contiguous=0 Licenses=(null) Network=(null)
+   Command=/gpfs/fs0/scratch/l/lcl_uotiscscc/lcl_uotiscsccs1040/didwdidw/2_experiments/jobscript.sh
+   WorkDir=/gpfs/fs0/scratch/l/lcl_uotiscscc/lcl_uotiscsccs1040/didwdidw/2_experiments
+   StdErr=/gpfs/fs0/scratch/l/lcl_uotiscscc/lcl_uotiscsccs1040/didwdidw/2_experiments/sort500.txt
+   StdIn=/dev/null
+   StdOut=/gpfs/fs0/scratch/l/lcl_uotiscscc/lcl_uotiscsccs1040/didwdidw/2_experiments/sort500.txt
+   Power=
+   MailUser=didwdidw0309@gmail.com MailType=END,FAIL
+
+sacct -j 5435869
+       JobID    JobName    Account    Elapsed  MaxVMSize     MaxRSS  SystemCPU    UserCPU ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- ---------- ---------- -------- 
+5435869         mpi_job lcl-uotis+   00:08:20                        41:36.809 1-18:31:21      0:0 
+5435869.bat+      batch lcl-uotis+   00:08:20    684716K      8604K  00:00.293  00:00.285      0:0 
+5435869.ext+     extern lcl-uotis+   00:08:20    138360K      1064K   00:00:00  00:00.002      0:0 
+5435869.0    lmp_intel+ lcl-uotis+   00:08:15  10583760K    708152K  41:36.515 1-18:31:21      0:0 
