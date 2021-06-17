@@ -1,2 +1,1 @@
-# LAMMPS
-ISC21 Application
+# ISC21 Application
