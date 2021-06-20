@@ -1,0 +1,31 @@
+# Rhodopsin model
+
+units           real  
+neigh_modify    delay 5 every 1   
+
+atom_style      full
+bond_style      harmonic 
+angle_style     charmm 
+dihedral_style  charmm 
+improper_style  harmonic 
+pair_style      lj/charmm/coul/long 8.0 10.0 
+pair_modify     mix arithmetic
+kspace_style    pppm 1e-4 
+
+read_data       data.rhodo
+replicate	4 4 4
+
+fix             1 all shake 0.0001 5 0 m 1.0 a 232
+fix             2 all nvt temp 300.0 300.0 100.0
+
+special_bonds   charmm
+ 
+thermo          0
+thermo_style    multi 
+timestep        2.0
+
+#dump myDump all atom 100 rhodo.atom # optional, for visualization
+
+#dump 		d1 all image 100 rhodo-*.png type type zoom 1.5 adiam 1.5 box yes 0.02 ssao yes 12345 0.6 size 2048 2048 view 60 30 # optional, for visualization
+
+run		6000
